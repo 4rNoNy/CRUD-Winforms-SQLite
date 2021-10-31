@@ -1,0 +1,16 @@
+C:\Users\User\source\repos\Desafio_Avaliativo\Desafio_Avaliativo\bin\Debug\Desafio_Avaliativo.exe.config
+C:\Users\User\source\repos\Desafio_Avaliativo\Desafio_Avaliativo\bin\Debug\Desafio_Avaliativo.exe
+C:\Users\User\source\repos\Desafio_Avaliativo\Desafio_Avaliativo\bin\Debug\Desafio_Avaliativo.pdb
+C:\Users\User\source\repos\Desafio_Avaliativo\Desafio_Avaliativo\bin\Debug\System.Data.SQLite.dll
+C:\Users\User\source\repos\Desafio_Avaliativo\Desafio_Avaliativo\bin\Debug\System.Data.SQLite.xml
+C:\Users\User\source\repos\Desafio_Avaliativo\Desafio_Avaliativo\obj\Debug\Desafio_Avaliativo.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Desafio_Avaliativo\Desafio_Avaliativo\obj\Debug\Desafio_Avaliativo.Principal.resources
+C:\Users\User\source\repos\Desafio_Avaliativo\Desafio_Avaliativo\obj\Debug\Desafio_Avaliativo.Properties.Resources.resources
+C:\Users\User\source\repos\Desafio_Avaliativo\Desafio_Avaliativo\obj\Debug\Desafio_Avaliativo.csproj.GenerateResource.cache
+C:\Users\User\source\repos\Desafio_Avaliativo\Desafio_Avaliativo\obj\Debug\Desafio_Avaliativo.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Desafio_Avaliativo\Desafio_Avaliativo\obj\Debug\Desafio_Avaliativo.exe
+C:\Users\User\source\repos\Desafio_Avaliativo\Desafio_Avaliativo\obj\Debug\Desafio_Avaliativo.pdb
+C:\Users\User\source\repos\Desafio_Avaliativo\Desafio_Avaliativo\obj\Debug\Desafio_Avaliativo.pgCadastro.resources
+C:\Users\User\source\repos\Desafio_Avaliativo\Desafio_Avaliativo\bin\Debug\MetroFramework.Design.dll
+C:\Users\User\source\repos\Desafio_Avaliativo\Desafio_Avaliativo\bin\Debug\MetroFramework.dll
+C:\Users\User\source\repos\Desafio_Avaliativo\Desafio_Avaliativo\bin\Debug\MetroFramework.Fonts.dll
