@@ -2,7 +2,7 @@
 
 ## Tarefas
 
-CRUD basico usando C# conectado ao banco de dados SQLite.
+CRUD basico usando Windows Forms(C#), conectado ao banco de dados SQLite.
 
 ## Ícones
 
