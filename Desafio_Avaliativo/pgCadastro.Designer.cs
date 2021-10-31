@@ -33,10 +33,12 @@ namespace Desafio_Avaliativo
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pgCadastro));
             this.btnFechar = new System.Windows.Forms.PictureBox();
             this.panelcontender = new System.Windows.Forms.Panel();
+            this.txtPesquisar = new System.Windows.Forms.MaskedTextBox();
+            this.txtNascimento = new System.Windows.Forms.MaskedTextBox();
+            this.txtAltura = new System.Windows.Forms.MaskedTextBox();
             this.txtAtivo = new System.Windows.Forms.CheckBox();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtSobrenome = new System.Windows.Forms.TextBox();
-            this.txtAltura = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,7 +50,6 @@ namespace Desafio_Avaliativo
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDados = new System.Windows.Forms.DataGridView();
             this.MenuVertical = new System.Windows.Forms.Panel();
@@ -57,7 +58,6 @@ namespace Desafio_Avaliativo
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BarraTitulo = new System.Windows.Forms.Panel();
             this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
-            this.txtNascimento = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnFechar)).BeginInit();
             this.panelcontender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
@@ -82,11 +82,12 @@ namespace Desafio_Avaliativo
             // panelcontender
             // 
             this.panelcontender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.panelcontender.Controls.Add(this.txtPesquisar);
             this.panelcontender.Controls.Add(this.txtNascimento);
+            this.panelcontender.Controls.Add(this.txtAltura);
             this.panelcontender.Controls.Add(this.txtAtivo);
             this.panelcontender.Controls.Add(this.btnSalvar);
             this.panelcontender.Controls.Add(this.txtSobrenome);
-            this.panelcontender.Controls.Add(this.txtAltura);
             this.panelcontender.Controls.Add(this.txtNome);
             this.panelcontender.Controls.Add(this.label7);
             this.panelcontender.Controls.Add(this.label6);
@@ -98,7 +99,6 @@ namespace Desafio_Avaliativo
             this.panelcontender.Controls.Add(this.btnExcluir);
             this.panelcontender.Controls.Add(this.btnEditar);
             this.panelcontender.Controls.Add(this.btnPesquisar);
-            this.panelcontender.Controls.Add(this.txtPesquisar);
             this.panelcontender.Controls.Add(this.label1);
             this.panelcontender.Controls.Add(this.dgvDados);
             this.panelcontender.Location = new System.Drawing.Point(197, 33);
@@ -107,13 +107,45 @@ namespace Desafio_Avaliativo
             this.panelcontender.TabIndex = 5;
             this.panelcontender.Paint += new System.Windows.Forms.PaintEventHandler(this.panelcontender_Paint);
             // 
+            // txtPesquisar
+            // 
+            this.txtPesquisar.Location = new System.Drawing.Point(61, 160);
+            this.txtPesquisar.Mask = "00";
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.PromptChar = ' ';
+            this.txtPesquisar.Size = new System.Drawing.Size(33, 20);
+            this.txtPesquisar.TabIndex = 26;
+            this.txtPesquisar.ValidatingType = typeof(int);
+            this.txtPesquisar.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            // 
+            // txtNascimento
+            // 
+            this.txtNascimento.Location = new System.Drawing.Point(328, 353);
+            this.txtNascimento.Mask = "00/00/0000";
+            this.txtNascimento.Name = "txtNascimento";
+            this.txtNascimento.Size = new System.Drawing.Size(65, 20);
+            this.txtNascimento.TabIndex = 25;
+            this.txtNascimento.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            this.txtNascimento.ValidatingType = typeof(System.DateTime);
+            // 
+            // txtAltura
+            // 
+            this.txtAltura.Location = new System.Drawing.Point(329, 320);
+            this.txtAltura.Mask = "0.00";
+            this.txtAltura.Name = "txtAltura";
+            this.txtAltura.Size = new System.Drawing.Size(33, 20);
+            this.txtAltura.TabIndex = 24;
+            this.txtAltura.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePromptAndLiterals;
+            // 
             // txtAtivo
             // 
             this.txtAtivo.AutoSize = true;
-            this.txtAtivo.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtAtivo.Checked = true;
+            this.txtAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.txtAtivo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtAtivo.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.txtAtivo.ForeColor = System.Drawing.Color.White;
-            this.txtAtivo.Location = new System.Drawing.Point(90, 281);
+            this.txtAtivo.Location = new System.Drawing.Point(121, 281);
             this.txtAtivo.Name = "txtAtivo";
             this.txtAtivo.Size = new System.Drawing.Size(51, 24);
             this.txtAtivo.TabIndex = 22;
@@ -144,22 +176,15 @@ namespace Desafio_Avaliativo
             // 
             // txtSobrenome
             // 
-            this.txtSobrenome.Location = new System.Drawing.Point(303, 320);
+            this.txtSobrenome.Location = new System.Drawing.Point(112, 355);
             this.txtSobrenome.Name = "txtSobrenome";
             this.txtSobrenome.Size = new System.Drawing.Size(78, 20);
             this.txtSobrenome.TabIndex = 15;
             this.txtSobrenome.TextChanged += new System.EventHandler(this.txtSobrenome_TextChanged);
             // 
-            // txtAltura
-            // 
-            this.txtAltura.Location = new System.Drawing.Point(89, 357);
-            this.txtAltura.Name = "txtAltura";
-            this.txtAltura.Size = new System.Drawing.Size(78, 20);
-            this.txtAltura.TabIndex = 14;
-            // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(89, 320);
+            this.txtNome.Location = new System.Drawing.Point(112, 322);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(78, 20);
             this.txtNome.TabIndex = 13;
@@ -169,7 +194,7 @@ namespace Desafio_Avaliativo
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(197, 355);
+            this.label7.Location = new System.Drawing.Point(223, 353);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 20);
             this.label7.TabIndex = 12;
@@ -180,7 +205,7 @@ namespace Desafio_Avaliativo
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(26, 355);
+            this.label6.Location = new System.Drawing.Point(267, 320);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 20);
             this.label6.TabIndex = 11;
@@ -191,7 +216,7 @@ namespace Desafio_Avaliativo
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(200, 320);
+            this.label5.Location = new System.Drawing.Point(9, 355);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 20);
             this.label5.TabIndex = 10;
@@ -202,7 +227,7 @@ namespace Desafio_Avaliativo
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(26, 320);
+            this.label4.Location = new System.Drawing.Point(49, 320);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 20);
             this.label4.TabIndex = 9;
@@ -213,7 +238,7 @@ namespace Desafio_Avaliativo
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(26, 281);
+            this.label3.Location = new System.Drawing.Point(57, 281);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 20);
             this.label3.TabIndex = 8;
@@ -300,13 +325,6 @@ namespace Desafio_Avaliativo
             this.btnPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
-            // txtPesquisar
-            // 
-            this.txtPesquisar.Location = new System.Drawing.Point(61, 162);
-            this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(46, 20);
-            this.txtPesquisar.TabIndex = 2;
             // 
             // label1
             // 
@@ -395,13 +413,6 @@ namespace Desafio_Avaliativo
             this.metroContextMenu1.Name = "metroContextMenu1";
             this.metroContextMenu1.Size = new System.Drawing.Size(61, 4);
             // 
-            // txtNascimento
-            // 
-            this.txtNascimento.Location = new System.Drawing.Point(303, 355);
-            this.txtNascimento.Name = "txtNascimento";
-            this.txtNascimento.Size = new System.Drawing.Size(78, 20);
-            this.txtNascimento.TabIndex = 23;
-            // 
             // pgCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,11 +449,9 @@ namespace Desafio_Avaliativo
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.Label label1;
         private MetroFramework.Controls.MetroContextMenu metroContextMenu1;
         private System.Windows.Forms.TextBox txtSobrenome;
-        private System.Windows.Forms.TextBox txtAltura;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -451,6 +460,8 @@ namespace Desafio_Avaliativo
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.CheckBox txtAtivo;
-        private System.Windows.Forms.TextBox txtNascimento;
+        private System.Windows.Forms.MaskedTextBox txtNascimento;
+        private System.Windows.Forms.MaskedTextBox txtAltura;
+        private System.Windows.Forms.MaskedTextBox txtPesquisar;
     }
 }

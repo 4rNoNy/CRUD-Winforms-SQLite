@@ -14,12 +14,15 @@ namespace Desafio_Avaliativo
 {
     public partial class pgCadastro : MetroFramework.Forms.MetroForm
     {
-        bool Ativado = false;
-        string txtAAtivo;
+        bool Ativado = true;
+
+
         public pgCadastro()
+
         {
             InitializeComponent();
         }
+        
 
         private void pgCadastro_Load(object sender, EventArgs e)
         {
@@ -97,28 +100,32 @@ namespace Desafio_Avaliativo
                 MessageBox.Show("Informe os dados cliente a incluir");
                 return;
             }
-            else
+            try
             {
                 Pessoa pssa = new Pessoa();
                 
-                pssa.pcd = txtAAtivo;
+                pssa.pcd = txtAtivo.Text;
                 pssa.nome = txtNome.Text;
                 pssa.sobrenome = txtSobrenome.Text;
-                pssa.datanascimento = Convert.ToInt32(txtNascimento.Text);
-                pssa.altura = Convert.ToInt32(txtAltura.Text);
+                pssa.datanascimento = txtNascimento.Text;
+                pssa.altura = txtAltura.Text;
 
                 projectCode.Add(pssa);
 
                 ExibirDados();
                 LimpaDados();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro : " + ex.Message);
+            }
 
-           
+
         }
 
         private void LimpaDados()
         {
-            txtAtivo.Text = "";
+            
             txtNome.Text = "";
             txtSobrenome.Text = "";
             txtAltura.Text = "";
@@ -145,16 +152,17 @@ namespace Desafio_Avaliativo
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            
 
             if (Ativado == true)
             {
                 Ativado = false;
-                 txtAAtivo = "Não";
+                txtAtivo.Text = "Não";
             }
             else
             {
                 Ativado = true;
-                txtAAtivo = "Sim";
+                txtAtivo.Text = "Sim";
             }
         }
 
@@ -165,19 +173,22 @@ namespace Desafio_Avaliativo
                 MessageBox.Show("Informe o ID do cliente a ser Localizado");
                 return;
             }
-            try
+            try 
             {
                 DataTable dt = new DataTable();
-                int codigo = Convert.ToInt16(txtPesquisar.Text);
+                int codigo = Convert.ToInt32(txtPesquisar.Text);
 
                 dt = projectCode.GetPessoa(codigo);
                 dgvDados.DataSource = dt;
-            }
+                }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Erro : " + ex.Message);
             }
-        }
+                     
+                
+            }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
@@ -210,12 +221,12 @@ namespace Desafio_Avaliativo
             try
             {
                 Pessoa psa = new Pessoa();
-
-                psa.pcd = txtAAtivo;
+                psa.id = Convert.ToInt32(txtPesquisar.Text);
+                psa.pcd = txtAtivo.Text;
                 psa.nome = txtNome.Text;
                 psa.sobrenome = txtSobrenome.Text;
-                psa.altura = Convert.ToInt16(txtAltura.Text);
-                psa.datanascimento = Convert.ToInt16(txtNascimento.Text);
+                psa.altura = txtAltura.Text;
+                psa.datanascimento = txtNascimento.Text;
 
                 projectCode.Update(psa);
                 ExibirDados();
@@ -224,9 +235,15 @@ namespace Desafio_Avaliativo
             {
                 MessageBox.Show("Erro : " + ex.Message);
             }
+            LimpaDados();
         }
 
         private void txtSobrenome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

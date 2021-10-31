@@ -13,7 +13,7 @@ namespace Desafio_Avaliativo
         public string pcd { get; set; }
         public string nome { get; set; }
         public string sobrenome { get; set; }
-        public int datanascimento { get; set; }
-        public int altura { get; set; }
+        public string datanascimento { get; set; }
+        public string altura { get; set; }
     }
 }
